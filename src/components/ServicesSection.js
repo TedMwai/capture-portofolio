@@ -10,7 +10,7 @@ const ServicesSection = () => {
     <div className="services">
       <div className="description">
         <h2>
-          Hi <span>quality</span> services
+          High <span>quality</span> services
         </h2>
         <div className="cards">
           <div className="card">
