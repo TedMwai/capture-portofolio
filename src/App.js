@@ -7,19 +7,29 @@ import OurWork from "./pages/OurWork";
 import ContactUs from "./pages/ContactUs";
 import MovieDetails from "./pages/MovieDetail";
 // Router
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+// Animation
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <Routes>
-      <Route path="/" element={<AboutUs />} /> 
-      <Route path="/work" element={<OurWork />} /> 
-      <Route path="/work/:id" element={<MovieDetails />} /> 
-      <Route path="/contact" element={<ContactUs />} /> 
-      </Routes>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<AboutUs />} />
+          <Route path="/work" element={<OurWork />} />
+          <Route path="/work/:id" element={<MovieDetails />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }
