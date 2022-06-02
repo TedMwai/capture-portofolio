@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
         background: #1b1b1b;
         font-family: 'Inter', sans-serif;
         /* font-family: 'Lobster', cursive; */
+        overflow-x: hidden;
     }
     button {
         font-weight: bold;
