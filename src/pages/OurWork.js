@@ -50,7 +50,12 @@ const OurWork = () => {
           <img src={theracer} alt="Racer" />
         </Link>
       </Movie>
-      <Movie ref={element2} variants={fade} animate={controls2} initial="hidden">
+      <Movie
+        ref={element2}
+        variants={fade}
+        animate={controls2}
+        initial="hidden"
+      >
         <h2>Good times</h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
@@ -68,6 +73,9 @@ const Work = styled(motion.div)`
   padding: 5rem 10rem;
   h2 {
     padding: 1rem 0rem;
+  }
+  @media (max-width: 1300px) {
+    padding: 2rem 2rem;
   }
 `;
 
